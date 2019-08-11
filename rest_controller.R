@@ -27,9 +27,8 @@ irisx <- function(param) {
 
 #* @post /runcode
 runcode <- function(req, script, data = 0 ){
-  print(script)
-  print(req)
-  print(data)
-  
+  #print(script)
+  #print(req)
+  #print(data)
   eval(parse(text = script))
 }
