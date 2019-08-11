@@ -22,7 +22,7 @@ From the root folder of this project run:
 
 ## Run web page example
 
-1. Go to http://localhost/visualizer or whatever you installed it
+1. Go to http://localhost/visualizer/src/index.html or whatever you installed it
 
 2. Paste the content of view.json using the button: "Paste View"
 
