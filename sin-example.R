@@ -3,6 +3,6 @@ y <- sin(x)
 z <- cos(x)
 
 data <- data.frame(x, y, z)
-colnames(c('x', 'y','z'))
+colnames(data) <- c('x', 'y','z')
 data
 
