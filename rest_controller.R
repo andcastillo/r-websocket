@@ -15,18 +15,29 @@ cors <- function(req, res) {
   }
 }
 
-#* @get /plotx
-plotx <- function(param){
-   plot(iris$Sepal.Length)
+#* Export the given variable
+#* @get /get_
+#* @param script The variable to retrieve
+get_ <- function(script){
+   get(script, envir = e)
 }
 
-#* @get /irisx
-irisx <- function(param) {
-  iris
+#* List all the variables in the current environment
+#* @get /ls_
+ls_ <- function(){
+  ls(e)
 }
 
-#* @post /runcode
-runcode <- function(req, script, data = 0 ){
+#* Remove the given variable
+#* @get /rm_
+#* @param script The variable to remove
+rm <- function(script){
+  rm(script, envir = e)
+}
+
+#* Evaluate the given script
+#* @post /eval_
+eval_ <- function(req, script, data = 0 ){
   #print(script)
   #print(req)
   eval(parse(text = script), e)
