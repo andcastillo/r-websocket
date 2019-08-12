@@ -37,7 +37,7 @@
                 ]
               ],
               "script": [
-                "let method = 'GET';\nif (this.action.name === 'eval_') {\n    method = 'POST'\n}\nlet script = this.action.value.replace(/ /g,'');\nconsole.log(this.action)\n$.ajax({\n    url: 'http://localhost:8888/' + this.action.name,\n    type: method,\n    // This is the important part\n    xhrFields: {\n        withCredentials: false\n    },\n    // This is the important part\n    data: {script: this.action.value.replace(/ /g,''), data: JSON.stringify({})},\n    success: (data) => {\n        API.createData(this.action.name, data);\n    },\n    error: function (xhr, status) {\n        console.log(xhr);\n        console.log(status);\n    }\n});\n"
+                "let method = 'GET';\nif (this.action.name === 'eval_') {\n    method = 'POST'\n}\nlet script = this.action.value.replace(/ /g,'');\n$.ajax({\n    url: 'http://localhost:8888/' + this.action.name,\n    type: method,\n    // This is the important part\n    xhrFields: {\n        withCredentials: false\n    },\n    // This is the important part\n    data: {script: this.action.value.replace(/ /g,''), data: JSON.stringify({})},\n    success: (data) => {\n        API.createData(this.action.name, data);\n    },\n    error: function (xhr, status) {\n        console.log(xhr);\n        console.log(status);\n    }\n});\n"
               ]
             }
           ],
@@ -394,8 +394,8 @@
             "top": 0
           },
           "size": {
-            "width": 54,
-            "height": 47
+            "width": 36,
+            "height": 26
           },
           "bgColor": [
             255,
@@ -549,12 +549,12 @@
           "created": true,
           "name": "Default layer",
           "position": {
-            "left": 55,
+            "left": 37,
             "top": 0
           },
           "size": {
             "width": 44,
-            "height": 42
+            "height": 26
           },
           "bgColor": [
             255,
@@ -774,6 +774,8 @@
     },
     {
       "url": "modules/types/client_interaction/button_action/",
+      "id": 5,
+      "title": "",
       "configuration": {
         "sections": {},
         "groups": {
@@ -836,6 +838,12 @@
       },
       "layers": {
         "Default layer": {
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer",
           "position": {
             "left": 100,
             "top": 39
@@ -844,20 +852,20 @@
             "width": 19,
             "height": 7
           },
-          "zIndex": 0,
-          "display": true,
-          "title": "",
           "bgColor": [
             255,
             255,
             255,
             0
-          ],
-          "wrapper": false,
-          "created": true,
-          "name": "Default layer"
+          ]
         },
         "API actions": {
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer",
           "position": {
             "left": 100,
             "top": 39
@@ -866,21 +874,14 @@
             "width": 19,
             "height": 7
           },
-          "zIndex": 0,
-          "display": true,
-          "title": "",
           "bgColor": [
             255,
             255,
             255,
             0
-          ],
-          "wrapper": false,
-          "created": true,
-          "name": "Default layer"
+          ]
         }
       },
-      "id": 7,
       "vars_in": [],
       "actions_in": [
         {}
@@ -889,8 +890,8 @@
         {
           "event": "onClick",
           "rel": "actionText",
-          "jpath": [],
-          "name": "ls_"
+          "name": "ls_",
+          "jpath": []
         }
       ],
       "vars_out": [],
@@ -930,11 +931,12 @@
             ""
           ]
         }
-      ],
-      "title": ""
+      ]
     },
     {
       "url": "modules/types/edition/slick_grid/",
+      "id": 6,
+      "title": "Click one to export as 'selected'",
       "configuration": {
         "sections": {},
         "groups": {
@@ -986,7 +988,7 @@
                 "pref"
               ],
               "filterRow": [
-                "// Documentation: https://github.com/NPellet/visualizer/blob/46b40ca86345f8fa313563bf9c6ecb80ba323101/src/modules/types/edition/slick_grid/view.js#L1695-L1735"
+                ""
               ],
               "customJpaths": [
                 ""
@@ -997,14 +999,14 @@
             [
               {
                 "name": "variables",
-                "jpath": [],
                 "editor": "none",
-                "forceType": "",
+                "forceType": "string",
                 "formatter": "typerenderer",
                 "copyFormatter": "default",
                 "visibility": "both",
                 "rendererOptions": "",
                 "editorOptions": "",
+                "jpath": [],
                 "hideColumn": []
               }
             ]
@@ -1012,6 +1014,8 @@
           "actionCols": [
             [
               {
+                "position": "end",
+                "clickMode": "text",
                 "backgroundColor": [
                   255,
                   255,
@@ -1023,9 +1027,7 @@
                   0,
                   0,
                   1
-                ],
-                "position": "end",
-                "clickMode": "text"
+                ]
               }
             ]
           ],
@@ -1058,6 +1060,12 @@
       },
       "layers": {
         "Default layer": {
+          "zIndex": 0,
+          "display": true,
+          "title": "Click one to export as 'selected'",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
           "position": {
             "left": 100,
             "top": 0
@@ -1066,20 +1074,20 @@
             "width": 25,
             "height": 38
           },
-          "zIndex": 0,
-          "display": true,
-          "title": "Click one to export as 'selected'",
           "bgColor": [
             255,
             255,
             255,
             0
-          ],
-          "wrapper": true,
-          "created": true,
-          "name": "Default layer"
+          ]
         },
         "API actions": {
+          "zIndex": 0,
+          "display": true,
+          "title": "Click one to export as 'selected'",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
           "position": {
             "left": 100,
             "top": 0
@@ -1088,25 +1096,18 @@
             "width": 25,
             "height": 38
           },
-          "zIndex": 0,
-          "display": true,
-          "title": "Click one to export as 'selected'",
           "bgColor": [
             255,
             255,
             255,
             0
-          ],
-          "wrapper": true,
-          "created": true,
-          "name": "Default layer"
+          ]
         }
       },
-      "id": 8,
       "vars_in": [
         {
           "rel": "list",
-          "name": "ls_"
+          "name": "lsJS"
         }
       ],
       "actions_in": [
@@ -1116,8 +1117,10 @@
         {
           "event": "onSelect",
           "rel": "row",
-          "jpath": [],
-          "name": "get_"
+          "name": "get_",
+          "jpath": [
+            "value"
+          ]
         }
       ],
       "vars_out": [
@@ -1161,11 +1164,12 @@
             ""
           ]
         }
-      ],
-      "title": "Click one to export as 'selected'"
+      ]
     },
     {
       "url": "modules/types/edition/object_editor/",
+      "id": 7,
+      "title": "Selected value",
       "configuration": {
         "sections": {},
         "groups": {
@@ -1203,6 +1207,12 @@
       },
       "layers": {
         "Default layer": {
+          "zIndex": 0,
+          "display": true,
+          "title": "Selected value",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
           "position": {
             "left": 0,
             "top": 48
@@ -1211,43 +1221,36 @@
             "width": 54,
             "height": 30
           },
-          "zIndex": 0,
-          "display": true,
-          "title": "Selected value",
           "bgColor": [
             255,
             255,
             255,
             0
-          ],
-          "wrapper": true,
-          "created": true,
-          "name": "Default layer"
+          ]
         },
         "API actions": {
+          "zIndex": 0,
+          "display": true,
+          "title": "Selected value",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
           "position": {
             "left": 126,
-            "top": 11
+            "top": 0
           },
           "size": {
             "width": 34,
-            "height": 30
+            "height": 38
           },
-          "zIndex": 0,
-          "display": true,
-          "title": "Selected value",
           "bgColor": [
             255,
             255,
             255,
             0
-          ],
-          "wrapper": true,
-          "created": true,
-          "name": "Default layer"
+          ]
         }
       },
-      "id": 10,
       "vars_in": [
         {
           "rel": "value",
@@ -1303,8 +1306,155 @@
             ""
           ]
         }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "id": 8,
+      "title": "",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "API.createData('lsJS', get('ls_').map(x => {return {value: x}}))"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "API actions": {
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "wrapper": true,
+          "created": true,
+          "name": "API actions",
+          "position": {
+            "left": 50,
+            "top": 37
+          },
+          "size": {
+            "width": 46,
+            "height": 9
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        }
+      },
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "ls_"
+        }
       ],
-      "title": "Selected value"
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
     }
   ],
   "variables": [
