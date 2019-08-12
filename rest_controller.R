@@ -1,5 +1,5 @@
-# make the model
-source("source.R")
+# The enviroment for these routes
+e <- new.env()
 
 #* @filter cors
 cors <- function(req, res) {
@@ -29,6 +29,5 @@ irisx <- function(param) {
 runcode <- function(req, script, data = 0 ){
   #print(script)
   #print(req)
-  #print(data)
-  eval(parse(text = script))
+  eval(parse(text = script), e)
 }

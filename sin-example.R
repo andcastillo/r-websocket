@@ -6,3 +6,4 @@ data <- data.frame(x, y, z)
 colnames(data) <- c('x', 'y','z')
 data
 
+# eval(parse(text = 'pp <- 10'))
