@@ -22,7 +22,7 @@ From the root folder of this project run:
 
 ## Run web page example
 
-1. Go to http://localhost/visualizer/src/index.html or whatever you installed it
+1. Go to http://localhost:8080/visualizer/src/index.html. The visualizer already comes with the API
 
 2. Paste the content of view.json using the button: "Paste View"
 
@@ -30,3 +30,5 @@ From the root folder of this project run:
 
 
 Do you undestand how it works??
+
+
