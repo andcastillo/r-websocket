@@ -1,0 +1,142 @@
+<html lang="en">
+
+<head>
+  <title>Jupyter Services Demo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js"></script>
+  <style type="text/css">
+    #cell {
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <script id="jupyter-config-data" type="application/json">
+    {
+      "baseUrl": "http://localhost:8888/",
+      "token": "56579eb9d73a1ff871644ffd89380e671a97b9b8c7e24bf0"
+    }
+    </script>
+
+  <h1>Run code!</h1>
+  <p>
+    Type code in the text area and click run to execute it.
+    You will see a log of the messages produced by the kernel below.
+  </p>
+  <div>
+    Kernel:
+    <pre id="kernel-info">Starting...</pre>
+  </div>
+  <textarea id="cell" cols="100" rows="24"></textarea>
+  <div>
+    <button id="run">run</button>
+  </div>
+  <div id="output"></div>
+  <script type="text/javascript">
+    require.config({
+      paths: {
+        'jquery': 'https://code.jquery.com/jquery-2.2.4.min',
+        '@jupyterlab/services': 'https://unpkg.com/@jupyterlab/services@6.0.0-alpha.0/dist/dist/index',
+      }
+    });
+  </script>
+  <script>
+    require(['jquery', '@jupyterlab/services'], function ($, services) {
+      /* eslint-disable no-console */
+      console.log('Starting example');
+
+      /* eslint-disable no-console */
+      console.log('Connecting to kernel');
+      const kernelManager = new services.KernelManager();
+      const sessionManager = new services.SessionManager({ kernelManager });
+
+      services.SessionAPI.listRunning().then(a => {
+        console.log('Connect to a given session and execute a command');
+
+        const session = sessionManager.connectTo({ model: a[0] });
+
+        let kernel = session.kernel;
+
+        console.log(`Connected to ${kernel.name}`);
+        kernel.requestKernelInfo().then(function (reply) {
+          const content = reply.content;
+          $('#kernel-info').text(content.banner);
+          console.log('Kernel info:', content);
+          console.log('Example started!');
+        });
+
+        $('#run').click(function () {
+          const code = $('#cell').val();
+          console.log('Executing:', code);
+          // clear output
+          $('#output').text('');
+          // Execute and handle replies on the kernel.
+          const future = kernel.requestExecute({ code: code });
+          // record each IOPub message
+          future.onIOPub = function (msg) {
+            console.log('Got IOPub:', msg);
+            $('#output').append(
+              $('<pre>').text('msg_type: ' + msg.header.msg_type)
+            );
+            $('#output').append($('<pre>').text(JSON.stringify(msg.content)));
+          };
+
+          future.onReply = function (reply) {
+            console.log('Got execute reply', reply);
+          };
+
+          future.done.then(function () {
+            console.log('Future is fulfilled');
+            $('#output').append($('<pre>').text('Done!'));
+          });
+        });
+      })
+      //console.log(sessionManager)
+
+
+
+      /*
+            sessionManager.connectTo({ model: sessionInfo }).then(session => {
+              kernel = session.kernel;
+              console.log('Kernel started:', kernel);
+              kernel.requestKernelInfo().then(function (reply) {
+                const content = reply.content;
+                $('#kernel-info').text(content.banner);
+                console.log('Kernel info:', content);
+                console.log('Example started!');
+              });
+              $('#run').click(function () {
+                const code = $('#cell').val();
+                console.log('Executing:', code);
+                // clear output
+                $('#output').text('');
+                // Execute and handle replies on the kernel.
+                const future = kernel.requestExecute({ code: code });
+                // record each IOPub message
+                future.onIOPub = function (msg) {
+                  console.log('Got IOPub:', msg);
+                  $('#output').append(
+                    $('<pre>').text('msg_type: ' + msg.header.msg_type)
+                  );
+                  $('#output').append($('<pre>').text(JSON.stringify(msg.content)));
+                };
+      
+                future.onReply = function (reply) {
+                  console.log('Got execute reply', reply);
+                };
+      
+                future.done.then(function () {
+                  console.log('Future is fulfilled');
+                  $('#output').append($('<pre>').text('Done!'));
+                });
+              });
+            })
+            */
+    });
+
+  </script>
+</body>
+
+</html>
