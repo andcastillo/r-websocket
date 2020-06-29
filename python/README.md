@@ -7,22 +7,15 @@ jupyter notebook
 
 Open the `notebook.ipynb` contained in this project. Once the notebook is opened, you can stablish a connection from external UI using the notebook communication API.
 
-For now, you must manually change in the index.html the connection information. Using the token and port assigned to your jupyter server set the section  with id="jupyter-config-data":
-```
- {
-      "baseUrl": "http://localhost:8888/",
-      "token": "e5257e099fd4097389b38271844c211450cf2cf513168cce"
-
- }
-```
-
-Then you can serve your web page using python, or you prefered web server:
+Then you can serve the `visualizer` using python, or you prefered web server:
 
 ```
 cd ..
 python3 -m http.server --cgi 9999
 ```
 
-Now you can open `http://localhost:9999/visualizer`
+Now you can open `http://localhost:9999/visualizer/?name=notebook2.json&baseUrl=http://localhost:8888/&token=a87e45748d987692b511876d69a656ecbd998b3fc8d96756`
+
+You must change the baseUrl and token to point to your current jupyter notebook server. The info is printed in the console when you started jupyter.
 
 Try to create variable in one side and use in the other side to verify that the communication is working

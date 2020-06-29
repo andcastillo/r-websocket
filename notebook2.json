@@ -9,6 +9,9 @@
       },
       "API actions": {
         "name": "API actions"
+      },
+      "test": {
+        "name": "test"
       }
     }
   },
@@ -84,6 +87,28 @@
         "API actions": {
           "zIndex": 0,
           "display": true,
+          "title": "POST request to R-socket",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 0,
+            "top": 48
+          },
+          "size": {
+            "width": 65,
+            "height": 43
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": false,
           "title": "POST request to R-socket",
           "wrapper": true,
           "created": true,
@@ -189,10 +214,10 @@
                       ""
                     ],
                     "zoom": [
-                      "none"
+                      "xy"
                     ],
                     "wheelAction": [
-                      "none"
+                      "zoomY"
                     ],
                     "wheelbaseline": [
                       0
@@ -210,13 +235,14 @@
                       ]
                     ],
                     "mouseTracking": [
-                      []
-                    ],
-                    "trackingAxis": [
-                      "x"
+                      [
+                        "track"
+                      ]
                     ],
                     "selectScatter": [
-                      []
+                      [
+                        "yes"
+                      ]
                     ],
                     "independantYZoom": [
                       []
@@ -323,7 +349,7 @@
                       "strokewidth": "1",
                       "strokestyle": "1",
                       "plotcontinuous": "continuous",
-                      "markerShape": "1",
+                      "markerShape": "2",
                       "markerSize": 2,
                       "normalize": "none",
                       "plotcolor": [
@@ -333,9 +359,13 @@
                         1
                       ],
                       "peakpicking": [],
-                      "markers": [],
+                      "markers": [
+                        "markers"
+                      ],
                       "optimizeSlots": [],
-                      "tracking": []
+                      "tracking": [
+                        "yes"
+                      ]
                     }
                   ]
                 ]
@@ -403,6 +433,28 @@
             255,
             0
           ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 36,
+            "height": 26
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
         }
       },
       "vars_in": [
@@ -416,6 +468,9 @@
       ],
       "vars_out": [
         {
+          "event": "onTrackMouse",
+          "rel": "markerInfos",
+          "name": "xy",
           "jpath": []
         }
       ],
@@ -562,6 +617,28 @@
             255,
             0
           ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": false,
+          "title": "R code",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 37,
+            "top": 0
+          },
+          "size": {
+            "width": 44,
+            "height": 26
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
         }
       },
       "vars_in": [
@@ -579,8 +656,8 @@
         {
           "event": "onButtonClick",
           "rel": "data",
-          "jpath": [],
-          "name": "eval_"
+          "name": "eval_",
+          "jpath": []
         }
       ],
       "toolbar": {
@@ -678,8 +755,8 @@
           "created": true,
           "name": "Default layer",
           "position": {
-            "left": 70,
-            "top": 49
+            "left": 55,
+            "top": 48
           },
           "size": {
             "width": 63,
@@ -695,6 +772,28 @@
         "API actions": {
           "zIndex": 0,
           "display": true,
+          "title": "Response code from eval",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 66,
+            "top": 48
+          },
+          "size": {
+            "width": 65,
+            "height": 43
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": false,
           "title": "Response code from eval",
           "wrapper": true,
           "created": true,
@@ -868,6 +967,28 @@
         "API actions": {
           "zIndex": 0,
           "display": true,
+          "title": "",
+          "wrapper": false,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 100,
+            "top": 39
+          },
+          "size": {
+            "width": 19,
+            "height": 7
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": false,
           "title": "",
           "wrapper": false,
           "created": true,
@@ -1108,6 +1229,28 @@
             255,
             0
           ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": false,
+          "title": "Click one to export as 'selected'",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 100,
+            "top": 0
+          },
+          "size": {
+            "width": 25,
+            "height": 38
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
         }
       },
       "vars_in": [
@@ -1237,6 +1380,28 @@
         "API actions": {
           "zIndex": 0,
           "display": true,
+          "title": "Selected value",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 126,
+            "top": 0
+          },
+          "size": {
+            "width": 34,
+            "height": 38
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": false,
           "title": "Selected value",
           "wrapper": true,
           "created": true,
@@ -1394,7 +1559,29 @@
             "top": 27
           },
           "size": {
-            "width": 44,
+            "width": 55,
+            "height": 9
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "wrapper": true,
+          "created": true,
+          "name": "API actions",
+          "position": {
+            "left": 37,
+            "top": 27
+          },
+          "size": {
+            "width": 55,
             "height": 9
           },
           "bgColor": [
@@ -1410,6 +1597,173 @@
           "rel": "inputValue",
           "name": "ls_"
         }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin",
+              "color": [
+                100,
+                100,
+                100,
+                1
+              ]
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "id": 9,
+      "title": "",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                []
+              ],
+              "asyncAwait": [
+                [
+                  "top"
+                ]
+              ],
+              "script": [
+                "console.log($('script#jupyter-config-data').value)"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute",
+                "hide": [],
+                "disable": []
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "API actions": {
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "wrapper": true,
+          "created": true,
+          "name": "API actions",
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "test": {
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "wrapper": true,
+          "created": true,
+          "name": "test",
+          "position": {
+            "left": 1,
+            "top": 4
+          },
+          "size": {
+            "width": 53,
+            "height": 59
+          },
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ]
+        }
+      },
+      "vars_in": [
+        {}
       ],
       "actions_in": [
         {}
@@ -1503,7 +1857,7 @@
         "general": [
           {
             "script": [
-              "require(['@jupyterlab/services'], function (services) {\n    let options = {\n        \"baseUrl\": \"http://localhost:8888/\",\n        \"token\": \"5a5706df006e68fff0e873181cfc9e942b7eac295f399b78\"\n    }\n    \n    /* eslint-disable no-console */\n    console.log('Starting python connection');\n    \n    /* eslint-disable no-console */\n    console.log('Connecting to kernel');\n    const kernelManager = new services.KernelManager(options);\n    const sessionManager = new services.SessionManager({ kernelManager });\n    \n    services.SessionAPI.listRunning().then(a => {\n        console.log('Connect to a given session to execute commands');\n    \n        const session = sessionManager.connectTo({ model: a[0] });\n    \n        let kernel = session.kernel;\n    \n        console.log(`Connected to ${kernel.name}`);\n        kernel.requestKernelInfo().then(function (reply) {\n            const content = reply.content;\n            //$('#kernel-info').text(content.banner);\n            console.log('Kernel info:', content);\n            console.log('Example started!');\n        });\n        \n        API.cache('kernel', kernel)\n    });\n});"
+              "const queryString = window.location.search;\nconst urlParams = new URLSearchParams(queryString);\nconst baseUrl = urlParams.get('baseUrl');\nconst toke =  urlParams.get('token');\ndocument.getElementById(\"jupyter-config-data\").innerHTML = `{\"baseUrl\": \"${baseUrl}\",\"token\": \"${toke}\"}`;\n\nrequire(['@jupyterlab/services'], function (services) {\n\n    console.log(document.getElementById(\"jupyter-config-data\").innerHTML);\n    \n    console.log(\"ddd\")\n    /* eslint-disable no-console */\n    console.log('Starting python connection');\n    \n    /* eslint-disable no-console */\n    console.log('Connecting to kernel');\n    const kernelManager = new services.KernelManager();\n    const sessionManager = new services.SessionManager({ kernelManager });\n    \n    services.SessionAPI.listRunning().then(a => {\n        console.log('Connect to a given session to execute commands');\n    \n        const session = sessionManager.connectTo({ model: a[0] });\n    \n        let kernel = session.kernel;\n    \n        console.log(`Connected to ${kernel.name}`);\n        kernel.requestKernelInfo().then(function (reply) {\n            const content = reply.content;\n            //$('#kernel-info').text(content.banner);\n            console.log('Kernel info:', content);\n            console.log('Example started!');\n        });\n        \n        API.cache('kernel', kernel)\n    });\n});"
             ]
           }
         ]
