@@ -19,11 +19,10 @@ For now, you must manually change in the index.html the connection information. 
 Then you can serve your web page using python, or you prefered web server:
 
 ```
-cd browser-require
+cd ..
 python3 -m http.server --cgi 9999
 ```
 
-It will open the `index.html`. You can start writing and sending code to be evaluated in the
-same kernel and session as used by `notebook.ipynb`. 
+Now you can open `http://localhost:9999/visualizer`
 
 Try to create variable in one side and use in the other side to verify that the communication is working
