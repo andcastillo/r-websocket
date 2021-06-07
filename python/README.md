@@ -10,7 +10,6 @@ Open the `notebook.ipynb` contained in this project. Once the notebook is opened
 Then you can serve the `visualizer` using python, or you prefered web server:
 
 ```
-cd ..
 python3 -m http.server --cgi 9999
 ```
 
