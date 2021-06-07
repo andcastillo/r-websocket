@@ -14,7 +14,7 @@ cd ..
 python3 -m http.server --cgi 9999
 ```
 
-Now you can open `http://localhost:9999/visualizer/?viewURL=home.json&baseUrl=http://localhost:8888/&token=a87e45748d987692b511876d69a656ecbd998b3fc8d96756`
+Now you can open `http://localhost:9999/visualizer/?viewURL=views/home.json&baseUrl=http://localhost:8888/&token=a87e45748d987692b511876d69a656ecbd998b3fc8d96756`
 
 You must change the baseUrl and token to point to your current jupyter notebook server. The info is printed in the console when you started jupyter.
 
