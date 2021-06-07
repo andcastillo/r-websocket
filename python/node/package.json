@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@jupyterlab/services": "^6.0.0-alpha.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "ws": "^7.2.0"
   },
   "devDependencies": {
